@@ -15,5 +15,15 @@ I tested several types of classification models to see which would best predict 
 
 ## Results
 Of the models tested, the XGBoost model had the best performance to predict future complications, but it had only a 0.66 recall score and 0.68 f1 score on test data, making it unsuitable to use in a clinical setting. it would miss approximately a third of patients who would go on to have complications as well as flag almost as many who don't have complications.
+
 <img src="images/xgb_cfn_mtx.png"/>
+
+I used a couple methods to examine feature importance of the models. There was significant overlap in which features had the greatest predictive power. 
+
+<img src="images/xgb_shap.png"/>
+
+## Conclusions
+Neither of these tuned models did a great job of eliminating false negatives, missing around a third of patients who would go on to have potentially fatal complications or die in the first year after having an MI. I don't believe that further tuning would improve the predictive value of this model. Instead, I could look at other ways of preprocessing the data including more feature engineering. Additionally, a different type of model might have more of an effect on the model success. This data has been used previously to examine Neural Networks, so that seems like an obvious way to go. 
+
+In examining the features that the various models found to be important in making their predictions, several features stood out. The sodium level in the patient's blood (NA_BLOOD) was very important in all three models. Additionally, receiving NSAIDS (e.g. ibuprofen or Alleve), Asprin or Trental (improves blood flow) in the ICU had predictive value in all models. It could be interesting to study why these drugs are important to predicting future complications, while other medicines in the dataset, like opiods, don't have predictive value. I'm also curiuos as to why having Obstructive Chronic Bronchitis seems to have a protective effect.
 
