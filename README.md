@@ -14,7 +14,7 @@ A cleaned up version of the Myocardial Infarction Complications dataset was obta
 I tested several types of classification models to see which would best predict whether a patient would experience complications. I also looked at the feature importances of the models to see which features are best predictors of future complications and might be interesting areas of study into why complications occur.
 
 ## Results
-Of the models tested, the XGBoost model had the best performance to predict future complications, but it had only a 0.66 recall score and 0.68 f1 score on test data, making it unsuitable to use in a clinical setting. it would miss approximately a third of patients who would go on to have complications as well as flag almost as many who don't have complications.
+Of the models tested, the XGBoost model had the best performance to predict future complications, but it had only a 0.66 recall score and 0.68 f1 score on test data, making it unsuitable to use in a clinical setting; it would miss approximately a third of patients who would go on to have complications as well as flag almost as many who don't have complications.
 
 <img src="images/xgb_cfn_mtx.png"/>
 
